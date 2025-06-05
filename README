@@ -1,0 +1,51 @@
+# Complete BERT 复现
+
+本项目旨在**完全复现 BERT 模型**，包括其基本框架、核心模块、预训练流程与数据处理。适合学习BERT原理、结构实现与预训练任务。
+
+---
+
+## 项目结构
+
+- `images/`
+  - `BERT_Framework.png`：BERT 基本框架图
+  - `BERT_task.png`：BERT 任务示意图
+  - `Transformer_Encoder.png`：Transformer Encoder 结构图
+- `modules/`
+  - `bert.py`：BERT主结构、预训练模型、MLM/NSP头等实现
+  - `layer.py`：Transformer、Embedding等底层结构
+- `Datapreprocess.py`：预训练数据集与collate函数实现
+- `pretrain.ipynb`：BERT预训练主流程示例（含数据、dataloader、训练循环、mask预测可视化等）
+- `README`：项目说明文档
+
+---
+
+## 快速开始
+
+1. 安装依赖（需`transformers`、`torch`等库）：
+   ```bash
+   pip install torch transformers
+   ```
+2. 查看 `images/BERT_Framework.png` 了解整体结构。
+3. 阅读 `pretrain.ipynb`，了解数据准备、模型构建、训练与mask预测输出的完整流程。
+4. 可自定义数据集，或直接运行notebook体验BERT预训练任务。
+
+---
+
+## 主要功能
+
+- **BERT模型结构**：完全自定义实现，支持MLM与NSP任务
+- **数据处理**：支持自定义文本数据的预训练格式转换
+- **训练流程**：支持loss输出、mask预测与真实token对比、NSP预测可视化
+- **模块化设计**：各功能独立，便于理解与扩展
+
+---
+
+## 后续计划
+
+- 完善模型训练与推理流程
+- 增加详细文档与更多示例
+- 支持更大规模数据与多GPU训练
+
+---
+
+如有建议或问题，欢迎提 issue 交流。
